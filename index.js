@@ -31,10 +31,10 @@ async function run() {
     })
 
    // DELETE ORDER API
-  app.delete("/service/:id", async (req, res) => {
+  app.delete("/product/:id", async (req, res) => {
   const id = req.params.id;
   const query = { _id: objectId(id) };
-  const resultOrder = await servicessCollections.deleteOne(query);
+  const resultOrder = await productsCollection.deleteOne(query);
   console.log("deleting user with id", resultOrder);
   res.json(resultOrder);
    });
