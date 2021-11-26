@@ -39,7 +39,7 @@ async function run() {
   res.json(resultOrder);
    });
 
-  //  GET ALL ORDER
+  //  GET ALL ORDER API
    app.get("/order", async (req, res) => {
   const cursorOrder = ordersCollections.find({});
   const orders = await cursorOrder.toArray();
@@ -64,7 +64,7 @@ async function run() {
        res.json(result);
       })
 
-      // CREATE REVIEW INSERT TO DB
+      // CREATE REVIEW INSERT TO DATABASE
     app.post("/review", async function (req, res) {
       const newReview = req.body;
       const result = await reviewCollections.insertOne(newReview);
